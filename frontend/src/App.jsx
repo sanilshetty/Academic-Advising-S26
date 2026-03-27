@@ -48,7 +48,8 @@ export default function App() {
   const [showCodoInfo, setShowCodoInfo] = useState(false);
   const [showBotInfo, setShowBotInfo] = useState(false);
   const [showRequirements, setShowRequirements] = useState(false);
-  const [showTranscriptModal, setShowTranscriptModal] = useState(true);
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
+  const [showTranscriptModal, setShowTranscriptModal] = useState(false);
   const [showTranscriptSteps, setShowTranscriptSteps] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -472,6 +473,37 @@ export default function App() {
                 csug@purdue.edu
               </a>
             </div>
+          </div>
+        </Modal>
+      )}
+
+      {showDisclaimer && (
+        <Modal onClose={() => {
+          setShowDisclaimer(false);
+          setShowTranscriptModal(true);
+        }} maxWidth="max-w-md">
+          <div className="flex flex-col items-center gap-6">
+            <div className="w-16 h-16 rounded-2xl bg-[#4075C9] flex items-center justify-center shadow-xl">
+              <span className="text-3xl">⚠️</span>
+            </div>
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl font-semibold text-white">Important Notice</h2>
+              <p className="text-white/70 text-base leading-relaxed">
+                CODOing into Computer Science is highly competitive. Meeting the minimum requirements <strong className="text-[#9ec2ff]">does not guarantee admission</strong> into the major.
+              </p>
+              <p className="text-white/70 text-base leading-relaxed">
+                This AI tool is a helpful guide based on official policy, but it <strong className="text-[#9ec2ff]">cannot provide an official decision</strong> on your CODO status.
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                setShowDisclaimer(false);
+                setShowTranscriptModal(true);
+              }}
+              className="w-full px-6 py-4 bg-[#4075C9] hover:bg-[#3065B9] text-white rounded-2xl transition-all cursor-pointer shadow-lg font-semibold text-lg"
+            >
+              I Understand
+            </button>
           </div>
         </Modal>
       )}
