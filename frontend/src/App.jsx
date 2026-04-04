@@ -178,6 +178,9 @@ export default function App() {
 
   return (
     <div className="size-full bg-black relative overflow-hidden flex flex-col">
+      <div className="bg-[#4075C9] text-white text-center py-1.5 text-sm font-medium">
+        Leave your feedback at <a href="https://bit.ly/codobot" target="_blank" rel="noreferrer" className="underline hover:text-white/80 transition-colors">bit.ly/codobot</a>
+      </div>
       <header className="bg-black px-6 py-4 flex items-center justify-between border-b-2 border-[#4075C9]">
         <div className="flex items-center gap-4">
           <img src={purdueIcon} alt="Purdue P" className="w-12 h-12 object-contain" />
@@ -397,7 +400,12 @@ export default function App() {
             </div>
             <div className="text-center">
               <h2 className="text-3xl font-semibold text-white mb-2">Upload Your Transcript</h2>
-              <p className="text-white/50">Upload a PDF to include transcript context in chat.</p>
+              <p className="text-white/50 mb-3">Upload a PDF to include transcript context in chat.</p>
+              <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3">
+                <p className="text-yellow-200/90 text-sm">
+                  Transferring into CS is a very competitive process, and responses from the AI do not guarantee your placement into CS.
+                </p>
+              </div>
             </div>
             <input
               type="file"
